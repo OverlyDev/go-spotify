@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>go-spotify Helper</title>
+        <script>
+            var location = window.location.href
+            var data = {
+                method: "POST", 
+                body: JSON.stringify({url:location.href}),
+                headers: {"Content-Type": "application/json; charset=UTF-8"}
+            }
+            fetch("/token", data)
+        </script>
+        <style>
+            html {
+                font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+                background-color: black;
+                color: white;
+            }
+
+            .container {
+                padding-top: 25px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                row-gap: 10px;
+            }
+
+            a:link {
+                color: steelblue;
+                text-decoration: none;
+            }
+
+            a:visited {
+                color: #1DB954;
+                text-decoration: none;
+            }
+            
+            a:hover {
+                text-decoration: underline;
+            }
+
+            .footer {
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background-color: #191414;
+                color: white;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+        <h1>go-spotify Helper</h1>
+        <p>You're signed in and can close this tab now :)</p>
+        </div>
+        <div class="footer">
+            <p>Source code for this tool can be found on <a href="https://github.com/OverlyDev/go-spotify">Github</a></p>
+        </div>
+    </body>
+</html>
